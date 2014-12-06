@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="lib/leaflet-markercluster/MarkerCluster.css" />
     <link rel="stylesheet" href="lib/leaflet-markercluster/MarkerCluster.Default.css" />
     <link rel="stylesheet" href="lib/leaflet-awesome-markers/leaflet.awesome-markers.css" />
+    <link rel="stylesheet" href="lib/animate-css/animate.min.css" />
 
     <style>
 
@@ -37,15 +38,127 @@
             margin: 3px -18px 15px -18px;
         }
 
+        #loading-container {
+            position: absolute;
+            top: 0px;
+            
+            z-index: 2;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .fab {
+            -webkit-box-shadow: rgba(0,0,0,.24) 0 12px 15px 0;
+            -moz-box-shadow:    rgba(0,0,0,.24) 0 12px 15px 0;
+            box-shadow:         rgba(0,0,0,.24) 0 12px 15px 0;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+
+            padding: 16px;
+            border: 1px solid #ccc;
+
+            background-color: #2c3e50;
+            color: #FFF;
+
+            width: 56px;
+            height: 56px;
+
+            margin: auto;
+            text-align: center;
+        }
+
+        #controls-container {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 99;
+        }
+
+        #controls-container button {
+            width: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            background-color: #2c3e50;
+            color: #FFF;
+            -webkit-box-shadow: rgba(0,0,0,.24) 0 12px 15px 0;
+            -moz-box-shadow:    rgba(0,0,0,.24) 0 12px 15px 0;
+            box-shadow:         rgba(0,0,0,.24) 0 12px 15px 0;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+
     </style>
 
 </head>
 
 <body>
 
+    <div id="loading-container" class="animated bounceInDown" title="Loading">
+        <div class="fab">
+            <i class="fa fa-circle-o-notch fa-spin"></i>
+        </div>
+    </div>
+
+    <div id="controls-container">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-copyright" title="Show attributions">
+            <i class="fa fa-copyright"></i>
+        </button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-info" title="Show info">
+            <i class="fa fa-info"></i>
+        </button>
+    </div>
+
+    <div class="modal fade" id="modal-copyright" tabindex="-1" role="dialog" aria-labelledby="Copyright modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <h4 class="modal-title">Attribution</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p>Bootstrap is released under the MIT license and is copyright 2014 Twitter. <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE">License</a></p>
+                    <p>Font Awesome 4.2.0 · Created by Dave Gandy. Font Awesome licensed under SIL OFL 1.1. <a href="http://scripts.sil.org/OFL">License</a></p>
+                    <p>Leaflet. Copyright (c) 2010-2014, Vladimir Agafonkin Copyright (c) 2010-2011, CloudMade All rights reserved. <a href="https://github.com/Leaflet/Leaflet/blob/master/LICENSE">License</a></p>
+                    <p>Leaflet.markercluster is free software, and may be redistributed under the MIT-LICENSE. <a href="https://github.com/Leaflet/Leaflet.markercluster/blob/master/MIT-LICENCE.txt">License</a></p>
+                    <p>Leaflet.AwesomeMarkers and colored markers are licensed under the MIT License. <a href="http://opensource.org/licenses/mit-license.html">License</a></p>
+                    <p>Animate.css is licensed under the MIT license. <a href="http://opensource.org/licenses/mit-license.html">License</a></p>
+                    <p>The jQuery Foundation. <a href="https://jquery.org/license/">License</a></p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-info" tabindex="-1" role="dialog" aria-labelledby="Copyright modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Info</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p>This project is an assignment for the subject SIW005 - Computer Graphics and Visualization (2014/2015)</p>
+                    <p>The aim is to load the 30 nearest weather stations to your location provided by OpenWeatherMaps. The result must be showed using a leaflet map with clustering.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="map"></div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="lib/leaflet-markercluster/leaflet.markercluster.js"></script>
     <script src="lib/leaflet-awesome-markers/leaflet.awesome-markers.min.js"></script>
@@ -137,11 +250,22 @@
 
             App.map.fitBounds(pointList);
             App.markers.addLayers(markerList);
+
+            App.end();
+        },
+
+        end: function() {
+
+            $('#loading-container').removeClass('bounceInDown').addClass('bounceOutUp');
+
+            console.log('End');
         }
 
     }
 
     $(document).ready(function() {
+
+        $('[data-toggle="popover"]').popover();
 
         // Setup map
         App.map = L.map('map').setView([45.52751668442124, -0.67175197601318], 3);
