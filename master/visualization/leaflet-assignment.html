@@ -1,0 +1,169 @@
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="lib/leaflet-markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="lib/leaflet-markercluster/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="lib/leaflet-awesome-markers/leaflet.awesome-markers.css" />
+
+    <style>
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body, #map {
+            height: 100%;
+        }
+
+        .popup-entry {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .popup-title {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .popup-hr {
+            border-color: #E2E2E2;
+            margin: 3px -18px 15px -18px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="lib/leaflet-markercluster/leaflet.markercluster.js"></script>
+    <script src="lib/leaflet-awesome-markers/leaflet.awesome-markers.min.js"></script>
+
+    <script>
+
+    var App = {
+
+        map: null,
+        markers: null,
+
+        geoSuccess: function(position) {
+
+            var latitude  = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var accuracy = position.coords.accuracy;
+
+            console.log('User at: ' + latitude + ', ' + longitude);
+
+            var userIcon = L.AwesomeMarkers.icon({
+                icon: 'user',
+                markerColor: 'red'
+            });
+
+            var userLocation = L.latLng(latitude, longitude);
+
+            L.circle(userLocation, accuracy).addTo(App.map);
+            L.marker(userLocation, {icon: userIcon}).bindPopup('Your location').addTo(App.map);
+
+            App.getNearestWeatherStations(latitude, longitude);
+        },
+
+        geoError: function() {
+
+            alert('Unable to retrieve your location, please enable geolocation in your device and allow the page to use it');
+            throw new Error('Unable to retrieve your location');
+        },
+
+        getNearestWeatherStations: function(lat, lon) {
+
+            var url = 'http://api.openweathermap.org/data/2.5/find?lat=' + lat + '&lon=' + lon + '&cnt=30&units=metric';
+
+            console.log('Getting: ' + url);
+
+            $.getJSON(url)
+            .done(function(json) {
+
+                console.log('AJAX ok');
+
+                App.drawWeatherStations(json);
+            })
+            .fail(function(jqxhr, error) {
+
+                throw new Error('AJAX fail');
+
+            });
+        },
+
+        drawWeatherStations: function(weatherData) {
+
+            var markerList = [];
+            var pointList = [];
+
+            weatherData.list.forEach(function(el, i) {
+
+                var markerLat = el.coord.lat;
+                var markerLon = el.coord.lon;
+
+                var latlon = L.latLng(markerLat, markerLon);
+
+                var weather = el.weather[0];
+                var stats = el.main;
+
+                var popupMsg = [
+                    '<div class="popup-title">' + el.name + '</div>',
+                    '<hr class="popup-hr"/>',
+                    '<div class="popup-entry">' + weather.description + '</div>',
+                    '<div class="popup-entry">' + stats.temp + '°C</div>',
+                    '<div class="popup-entry"><img alt="Weather" src="http://openweathermap.org/img/w/' + weather.icon + '.png"></div>',
+                ].join('');
+
+                var marker = L.marker(latlon);
+                marker.bindPopup(popupMsg);
+
+                pointList.push(latlon);
+                markerList.push(marker);
+
+            });
+
+            App.map.fitBounds(pointList);
+            App.markers.addLayers(markerList);
+        }
+
+    }
+
+    $(document).ready(function() {
+
+        // Setup map
+        App.map = L.map('map').setView([45.52751668442124, -0.67175197601318], 3);
+        L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+        }).addTo(App.map);
+
+        App.markers = new L.MarkerClusterGroup();
+        App.map.addLayer(App.markers);
+
+        // Geo location
+        if ( ! navigator.geolocation ) {
+            alert('Geolocation is not supported by your browser');
+            throw new Error('Geolocation not supported');
+        }
+
+        console.log('Gelocating user...');
+        navigator.geolocation.getCurrentPosition(App.geoSuccess, App.geoError);
+    });        
+
+    </script>
+
+</body>
+
+</html>
