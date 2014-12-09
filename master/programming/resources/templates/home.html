@@ -1,0 +1,76 @@
+<div id="home-container">
+<div class="row">
+	<div class="col-md-9 super-smooth">
+
+		<div class="widget super-fast animated zoomIn">
+			<h2 class="widget-title">
+				<span>Project Description</span>
+			</h2>
+
+			<hr/>
+
+			<div id="home-description-container">
+			
+				<section>
+					<p>This project is an assignment developed for the course SIW001 - Programming in the <a href="http://mastergeotech.info/" alt="Master's web page">Master of Science in Geospatial Technologies</a>.</p>
+
+					<p>The source code of this project can be found in the correspondent <a href="https://github.com/andreacalia/siw-001-programming">Github</a> repository. The code is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
+
+					<p>If you like it, feel free to contact me&nbsp;&nbsp;<span class="fa fa-smile-o"></span></p>
+				</section>
+
+				<section>
+					<h3>Context</h3>
+
+					<p>MEIT is a mobile application that allows users to assess their emotional intelligence. The application is grounded in state of the art knowledge in psychology to grade the users emotional intelligence on a scale of 1–121 at hand of some simple visual tests.</p>
+
+					<p>For analysis reasons, some data about the registered user (given her permission) are collected: age group, gender, location, test scores, test dates, and some others.</p>
+
+					<p>For the purpose of this project, the development team of the application gave access to aggregated data per country. These data are conformal with the current privacy regulations.</p>
+				</section>
+
+				<section>
+					<h3>Goal</h3>
+
+					<p>The goal of the assignment is to implement a 1-page Web application that visualizes the aggregate demographic data that is obtained from the MEIT application. In particular, the average score and time to perform the test needs to be visualized on a map, grouped per country, continent, or custom grouping of countries (i.e., the user needs to be able to group countries). Furthermore, it needs to be possible to set certain parameters: gender, age range, date range and tests performed, whereby results should be(dynamically) updateable.</p>
+
+					<p>To accomplish the goal, a special Web Service has been provided. The parameters are specified in the <a href="http://en.wikipedia.org/wiki/Query_string">Query String</a> and the response is in <a href="http://www.json.org">JSON</a> format.</p>
+				</section>
+
+				<section>
+					<h3>How To Use It</h3>
+
+					<p>The first thing you have to do is to go to the <a href="<% print( Router.routes.dataManager() ); %>">Management</a> section. There, you can select and filter the data you want to visualize. Also, you can manage the groups of countries. A group of countries contains the aggregated data of all the countries it is composed of. You can create as many groups as you want.</p>
+
+					<p>Once you have selected the data you want to analyze, you can go to the <a href="<% print( Router.routes.geo() ); %>">Geo</a> section. There you can visualize the gathered data in a <a href="https://developers.google.com/chart/interactive/docs/gallery/geochart">Geo Chart</a>. By default, the average time of each country is visualized. To change the analysis variable (time or test score) you have to use the switch in the <i>Data Filters</i> panel. In the <i>Group</i> panel you can enable or disable grouping. If the grouping is disabled (default), the results the analysis variable is aggregated per country. If the grouping is enabled, the variable is aggregated per group.</p>
+				</section>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="col-md-3 super-smooth">
+
+		<div class="widget super-fast animated zoomIn presentation-card">
+
+			<div id="home-about">
+				<img src="http://andreacalia.github.io/static/img/photo.jpg" alt="Me" id="home-photo" />
+
+
+				<p id="home-name">Andrea Calia</p>
+				<p class="home-education">Computer Science Engineer</p>
+				<p class="home-education">Master of Science in Geospatial Technologies</p>
+
+				<hr/>
+				
+				<div id="home-contact-container">
+					<p class="home-contact-entry"><span class="fa fa-2x fa-linkedin"></span><a href="https://linkedin.com/in/andreacalia" class="home-contact-entry-text">linkedin.com/in/andreacalia</a></p>
+					<p class="home-contact-entry"><span class="fa fa-2x fa-twitter"></span><a href="https://twitter.com/Andrea_Calia" class="home-contact-entry-text">@andreacalia</a></p>
+					<p class="home-contact-entry"><span class="fa fa-2x fa-github-alt"></span><a href="https://github.com/andreacalia" class="home-contact-entry-text">github.com/andreacalia</a></p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</div>

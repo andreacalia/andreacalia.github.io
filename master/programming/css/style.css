@@ -1,0 +1,218 @@
+/*!
+ * assignment-SIW001
+ * Assignment SIW001
+ * @author Andrea Calia
+ * License: Creative Commons Attribution-ShareAlike 4.0 International License. licensed.
+ */
+
+.nav-container {
+  background-color: #DDD;
+}
+
+#home-photo {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 80%;
+  margin: 0px 10% 20px 10%;
+  border: 1px solid #CCC;
+  -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 5px 5px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 5px 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 5px 5px 0;
+}
+
+#home-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.home-education {
+  text-align: center;
+  font-style: italic;
+}
+
+.home-contact-entry {
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.home-contact-entry-text {
+  margin-left: 20px;
+  color: #2C3E50;
+}
+
+section {
+  margin-bottom: 30px;
+  text-align: justify;
+}
+section p {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#df-filter-loading {
+  margin-left: 20px;
+  display: inline-block;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+
+#geo-grouping-group-enabler {
+  float: right;
+}
+
+.geo-grouping-group-warning {
+  float: right;
+  color: #F99;
+  display: none;
+}
+
+.geo-grouping-group-entry {
+  clear: both;
+  vertical-align: middle;
+}
+
+.geo-grouping-group-label {
+  vertical-align: middle;
+}
+
+#geo-filter-chooser-container {
+  text-align: center;
+}
+
+#geo-applied-filters {
+  margin-top: 30px;
+}
+
+.geo-filter-row {
+  margin-top: 10px;
+}
+
+#map-map-controls {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+#map-map-container {
+  clear: both;
+  position: relative;
+  margin: -14px;
+  background-color: #E2F4FF;
+}
+
+#loading-container {
+  text-align: center;
+  padding: 10px;
+}
+
+.group-controls-container {
+  margin-top: 20px;
+}
+
+.group-countries-entry {
+  padding: 5px;
+  margin: 5px;
+  display: inline-block;
+  min-width: 70px;
+  clear: both;
+  position: relative;
+}
+
+.group-countries-entry-text {
+  color: #FFF;
+  vertical-align: middle;
+  float: left;
+}
+
+.group-countries-entry-remove {
+  color: #FFF;
+  vertical-align: middle;
+  float: right;
+}
+
+#group-control-countries-locator {
+  height: auto;
+}
+
+.widget {
+  background-color: #FFF;
+  -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 12px 15px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 12px 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 12px 15px 0;
+  border: 1px solid #ccc;
+  padding: 14px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  min-height: 200px;
+}
+
+.widget hr {
+  border-color: #ccc;
+  margin-left: -14px;
+  margin-right: -14px;
+}
+
+.super-smooth {
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.super-fast {
+  -moz-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+}
+
+.widget-title {
+  clear: both;
+}
+
+.widget-title-control {
+  display: inline;
+  float: right;
+}
+
+body {
+  background-color: #EFEFEF;
+}
+
+#body-locator {
+  max-width: 1200px;
+}
+
+.disabled {
+  opacity: .4;
+  pointer-events: none;
+}
+
+.fab {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 12px 15px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 12px 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 12px 15px 0;
+  padding: 16px;
+  background-color: #2c3e50;
+  color: #FFF;
+  border: 1px solid #ccc;
+  width: 56px;
+  height: 56px;
+  margin: auto;
+}
+
+.opaque {
+  opacity: 1;
+}
+
+.transparent {
+  opacity: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
