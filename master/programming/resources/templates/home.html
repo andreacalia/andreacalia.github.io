@@ -14,7 +14,7 @@
 				<section>
 					<p>This project is an assignment developed for the course SIW001 - Programming in the <a href="http://mastergeotech.info/" alt="Master's web page">Master of Science in Geospatial Technologies</a>.</p>
 
-					<p>The source code of this project can be found in the correspondent <a href="https://github.com/andreacalia/siw-001-programming">Github</a> repository. The code is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
+					<p>The source code of this project can be found in the correspondent <a href="https://github.com/andreacalia/siw-001-programming">Github</a> repository. The code is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
 
 					<p>If you like it, feel free to contact me&nbsp;&nbsp;<span class="fa fa-smile-o"></span></p>
 				</section>
@@ -44,6 +44,19 @@
 
 					<p>Once you have selected the data you want to analyze, you can go to the <a href="<% print( Router.routes.geo() ); %>">Geo</a> section. There you can visualize the gathered data in a <a href="https://developers.google.com/chart/interactive/docs/gallery/geochart">Geo Chart</a>. By default, the average time of each country is visualized. To change the analysis variable (time or test score) you have to use the switch in the <i>Data Filters</i> panel. In the <i>Group</i> panel you can enable or disable grouping. If the grouping is disabled (default), the results the analysis variable is aggregated per country. If the grouping is enabled, the variable is aggregated per group.</p>
 				</section>
+
+				<section>
+					<h3>Technologies</h3>
+
+					<p>The educational purpose of this project is to show basic programming skills in Javascript. Additionally, I wanted to make the most of it so I decided to develop this project using some modern front-end frameworks and tools.</p>
+
+					<p>The framework behind this work is <a href="http://backbonejs.org/">BackboneJS</a>. It helps to give a structure of the web application providing models, collections and views. Also, it works out of the box with <a href="http://jquery.com/">jQuery</a> and <a href="http://underscorejs.org/">underscore.js</a>. The former is a well known feature-rich Javascript library that provides simple API for DOM manipulation, Ajax, event handling, etc. The latter is a library that add to some functional programming helpers to make Javascript programming a lot easier.</p>
+
+					<p>Besides, I used other CSS and Javascript libraries to improve the user experience and the application's look: <a href="http://getbootstrap.com/">Bootstrap</a>, <a href="http://bootswatch.com/flatly/">Flatly</a> (Bootstrap theme), <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> (literally awesome scalable icons), <a href="http://daneden.github.io/animate.css/">Animate.css</a> (CSS animations made easy), <a href="http://www.bootstrap-switch.org/">Bootstrap Switch</a> (toggle switches for Bootstrap) and <a href="http://wavded.github.io/humane-js/">Humane.js</a> (simple yet complete notification system).</p>
+
+					<p>The styling is done using the <a href="http://sass-lang.com/">SASS</a> CSS extension language. Along with it, I included the <a href="http://compass-style.org/">Compass</a> extension to use some handy SASS helpers.</p>
+
+					<p><a href="http://gruntjs.com/">Grunt</a> is used to take care of the building system (SCSS file compiling, livereload, etc.), while <a href="http://bower.io/">Bower</a> is used as a dependency management to load Javascript and CSS libraries (when available).</p>
 			</div>
 
 		</div>

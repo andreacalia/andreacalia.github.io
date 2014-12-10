@@ -4,7 +4,7 @@
 
 require.config({
 
-	baseUrl: '/',
+	baseUrl: '',
 	paths: {
 		jquery: 'lib/bower/jquery/dist/jquery.min',
 		underscore: 'lib/bower/underscore/underscore-min',
