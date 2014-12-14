@@ -1,3 +1,6 @@
+/**
+ * Router of the application. Manages the routing according to BackboneJS
+ */
 define([
   'jquery',
   'underscore',

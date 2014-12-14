@@ -2,9 +2,10 @@
  * assignment-SIW001
  * Assignment SIW001
  * @author Andrea Calia
- * License: Creative Commons Attribution-ShareAlike 4.0 International License. licensed.
+ * License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. licensed.
  */
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600);
 .nav-container {
   background-color: #DDD;
 }
@@ -104,6 +105,85 @@ section p {
   background-color: #E2F4FF;
 }
 
+.dash-analysis-card-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.dash-analysis-card {
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  -moz-border-radius: 2%;
+  -webkit-border-radius: 2%;
+  border-radius: 2%;
+  border: 1px solid #ccc;
+  -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 5px 6px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 5px 6px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 5px 6px 0;
+  cursor: pointer;
+}
+.dash-analysis-card label {
+  font-family: OpenSans;
+  font-weight: 300;
+  font-size: larger;
+}
+.dash-analysis-card p {
+  font-family: OpenSans;
+  font-weight: 600;
+  font-size: x-large;
+}
+
+.dash-analysis-card-min-time {
+  background-color: #A40663;
+  color: #FFF;
+}
+
+.dash-analysis-card-max-time {
+  background-color: #A40663;
+  color: #FFF;
+}
+
+.dash-analysis-card-min-score {
+  background-color: #AE0909;
+  color: #FFF;
+}
+
+.dash-analysis-card-max-score {
+  background-color: #AE0909;
+  color: #FFF;
+}
+
+#dash-analysis-table {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#dash-analysis-table thead {
+  background-color: #EFEFEF;
+}
+
+#dash-analysis-container h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.dash-analysis-card-aggregated {
+  background-color: #EFEFEF;
+  color: #645D5D;
+}
+
+#dash-analysis-description {
+  font-family: OpenSans;
+  font-weight: 300;
+  font-size: larger;
+}
+
+#dash-analysis-description {
+  border-color: #3498db;
+}
+
 #loading-container {
   text-align: center;
   padding: 10px;
@@ -147,13 +227,19 @@ section p {
   padding: 14px;
   margin-top: 15px;
   margin-bottom: 15px;
-  min-height: 200px;
+  min-height: 50px;
 }
-
 .widget hr {
   border-color: #ccc;
   margin-left: -14px;
   margin-right: -14px;
+}
+.widget .widget-title {
+  clear: both;
+}
+.widget .widget-title-control {
+  display: inline;
+  float: right;
 }
 
 .super-smooth {
@@ -167,15 +253,6 @@ section p {
   -moz-animation-duration: 0.4s;
   -webkit-animation-duration: 0.4s;
   animation-duration: 0.4s;
-}
-
-.widget-title {
-  clear: both;
-}
-
-.widget-title-control {
-  display: inline;
-  float: right;
 }
 
 body {
@@ -213,6 +290,10 @@ body {
 
 .transparent {
   opacity: 0;
+}
+
+.alert {
+  margin-bottom: 0px;
 }
 
 /*# sourceMappingURL=style.css.map */

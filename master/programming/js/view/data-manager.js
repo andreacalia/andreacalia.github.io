@@ -1,3 +1,6 @@
+/**
+ * BackboneJS view that implements the Management view.
+ */
 define([
     'jquery',
     'underscore',

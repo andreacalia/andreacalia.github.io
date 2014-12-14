@@ -31,8 +31,7 @@ require([
 	'jquery',
 	'lib/bower/bootstrap-switch/dist/js/bootstrap-switch',
 	'lib/bower/bootstrap/dist/js/bootstrap.min',
-	'goog!visualization,1,packages:[corechart,geochart]', // Load the Google Chart API
-	'js/test'
+	'goog!visualization,1,packages:[corechart,geochart]' // Load the Google Chart API
 ], function(App, humane){
 
 	// Globals

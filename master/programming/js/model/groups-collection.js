@@ -1,3 +1,6 @@
+/**
+ * BackboneJS collection of group models. Provide helpers that apply on all the groups.
+ */
 define([
     'jquery',
     'underscore',
@@ -38,8 +41,6 @@ define([
 	            console.debug('No groups found for element ' + JSON.stringify(element));
 	            return;
 	        }
-	        if(element.country === 'DE')
-	        	console.log("DE");
 
 	        // Add the element to each group
 	        _.each(groupsWithThisElement, function(group) {

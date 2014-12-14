@@ -1,3 +1,6 @@
+/**
+ * BackboneJS collection that stores raw data models.
+ */
 define([
     'jquery',
     'underscore',

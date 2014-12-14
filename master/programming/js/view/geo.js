@@ -1,3 +1,6 @@
+/**
+ * BackboneJS view that implements the Geo view.
+ */
 define([
     'jquery',
     'underscore',

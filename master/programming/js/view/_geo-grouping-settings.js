@@ -1,3 +1,6 @@
+/**
+ * BackboneJS view that implements the Grouping settings of the Geo view. Manage the grouping of the data
+ */
 define([
     'jquery',
     'underscore',
@@ -12,6 +15,14 @@ define([
             if( _.isUndefined(args.groupsCollection) )
                 throwError(new Error('No groups passed to geo setting view'));
 
+            this.locators = {
+                groupingEnabler: '#geo-grouping-group-enabler',
+                groupingWarnings: '.geo-grouping-group-warning',
+                groupingCheckboxes: 'input[type="checkbox"]',
+                groupingLabels: '.geo-grouping-group-label',
+                groupingEntries: '.geo-grouping-group-entry'
+            }
+
             this.groupsCollection = args.groupsCollection;
 
             this.template = template;
@@ -23,15 +34,15 @@ define([
             this.$el.html(compiled);
 
             // Enable JS components
-            this.$el.find('#geo-grouping-group-enabler').bootstrapSwitch({
+            this.$el.find(this.locators.groupingEnabler).bootstrapSwitch({
                 size: 'small'
             });
-            this.$el.find('.geo-grouping-group-warning').tooltip();
+            this.$el.find(this.locators.groupingWarnings).tooltip();
 
             // Event listeners
-            this.$el.find('#geo-grouping-group-enabler').on('switchChange.bootstrapSwitch', _.bind(this._groupEnablerChanged, this));
-            this.$el.find('input[type="checkbox"]').on('change', _.bind(this._groupChanged, this)); // Enable or disable conflicts
-            this.$el.find('input[type="checkbox"]').on('change', _.bind(this._triggerChangeGroupSelection, this)); // Trigger visualization
+            this.$el.find(this.locators.groupingEnabler).on('switchChange.bootstrapSwitch', _.bind(this._groupEnablerChanged, this));
+            this.$el.find(this.locators.groupingCheckboxes).on('change', _.bind(this._groupChanged, this)); // Enable or disable conflicts
+            this.$el.find(this.locators.groupingCheckboxes).on('change', _.bind(this._triggerChangeGroupSelection, this)); // Trigger visualization
 
             // Defaults
             this._disableGrouping();
@@ -42,9 +53,9 @@ define([
             evt.preventDefault();
             evt.stopPropagation();
 
-            var selectedIDs = _.reduce(this.$el.find('.geo-grouping-group-entry > input:checked'), function(memo, el) {
+            var selectedIDs = _.reduce(this.$el.find('input[data-group-id]:checked'), function(memo, el) {
 
-                memo.push($(el).parent().attr('data-group-id'));
+                memo.push($(el).attr('data-group-id'));
                 return memo;
 
             }, [])
@@ -60,7 +71,7 @@ define([
             var target = $(evt.target);
             
             // Find conflicting groups
-            var targetGroupID = target.parent().attr('data-group-id');
+            var targetGroupID = target.attr('data-group-id');
             var conflictingGroups = this.groupsCollection.get(targetGroupID).get('groupConflicts'); // [{id, name}, ...]
 
             // Find which function is appropriate
@@ -73,43 +84,41 @@ define([
 
                 applier.call(this, conflictingEntry);
 
-            }, this)
+            }, this);
         },
 
         _disableConflictingEntry: function(entry) {
 
             // Checkbox
-            entry.find('input[type="checkbox"]')
+            entry.find(this.locators.groupingCheckboxes)
                     .attr('disabled', 'disabled') // Disable the checkbox
                     .addClass('disabled') // Add disable CSS class
                     .prop('checked', false); // Untick the checkbox
             // Label
-            entry.find('.geo-grouping-group-label')
+            entry.find(this.locators.groupingLabels)
                     .addClass('disabled'); // Add disable CSS class
             // Warning
-            entry.find('.geo-grouping-group-warning').show();            
+            entry.find(this.locators.groupingWarnings).show();            
         },
 
         _enableConflictingEntry: function(entry) {
 
             // Checkbox
-            entry.find('input[type="checkbox"]')
+            entry.find(this.locators.groupingCheckboxes)
                     .removeAttr('disabled') // Enable the checkbox
                     .removeClass('disabled') // Remove disable CSS class
                     .prop('checked', false); // Untick the checkbox
             // Label
-            entry.find('.geo-grouping-group-label')
+            entry.find(this.locators.groupingLabels)
                     .removeClass('disabled'); // Remove disable CSS class
             // Warning
-            entry.find('.geo-grouping-group-warning').hide();
+            entry.find(this.locators.groupingWarnings).hide();
         },
 
         _groupEnablerChanged: function(evt, state) {
 
             evt.preventDefault();
             evt.stopPropagation();
-
-            var event = '';
 
             state ? this._enableGrouping() : this._disableGrouping();
 
@@ -118,18 +127,18 @@ define([
 
         _enableGrouping: function() {
 
-            this.$el.find('.geo-grouping-group-entry').each(_.bind(function(i, entry) {
+            this.$el.find(this.locators.groupingEntries).each(_.bind(function(i, entry) {
 
                 var entry = $(entry);
                 entry.removeClass('disabled');
-                entry.find('input[type="checkbox"]').removeAttr('disabled');
+                entry.find(this.locators.groupingCheckboxes).removeAttr('disabled');
 
             }, this));
         },
 
         _disableGrouping: function() {
 
-            this.$el.find('.geo-grouping-group-entry').each(_.bind(function(i, entry) {
+            this.$el.find(this.locators.groupingEntries).each(_.bind(function(i, entry) {
 
                 var entry = $(entry);
 
@@ -137,7 +146,7 @@ define([
                 this._enableConflictingEntry(entry);
 
                 entry.addClass('disabled'); // Add disable CSS class
-                entry.find('input[type="checkbox"]')
+                entry.find(this.locators.groupingCheckboxes)
                     .attr('disabled', 'disabled'); // Disable the checkbox
 
             }, this));

@@ -1,3 +1,6 @@
+/**
+ * BackboneJS view that implements the navbar of the web app.
+ */
 define([
     'jquery',
     'underscore',

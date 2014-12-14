@@ -1,3 +1,6 @@
+/**
+ * BackboneJS model that represents a raw data. Raw data are the objects loaded from the web service.
+ */
 define([
     'jquery',
     'underscore',

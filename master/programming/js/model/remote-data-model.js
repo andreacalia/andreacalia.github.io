@@ -1,3 +1,6 @@
+/**
+ * BackboneJS model that takes care of getting the information from the remote web service.
+ */
 define([
     'jquery',
     'underscore',

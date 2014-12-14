@@ -1,5 +1,5 @@
 /**
- * Initiate the web application
+ * Web application "controller". Manages the views and the application state and business logic.
  */
 define([
     'jquery',
@@ -11,13 +11,14 @@ define([
     'js/view/data-manager',
     'js/view/loading',
     'js/view/geo',
+    'js/view/dashboard',
     'js/view/group-management',
     'js/model/group-model',
     'js/model/groups-collection',
     'js/model/raw-collection',
     'js/model/remote-data-model'
 ], function($, _, Backbone, Router,
-            NavView, HomeView, DataManagerView, LoadingView, GeoView, GroupManagementView,
+            NavView, HomeView, DataManagerView, LoadingView, GeoView, DashboardView, GroupManagementView,
             GroupModel, GroupsCollection, RawCollection, RemoteDataModel) {
 
     var App = _.extend({
@@ -118,6 +119,22 @@ define([
         showDashboard: function() {
 
             this._showLoadingView();
+
+            if( ! this._areDataLoaded() ) {
+                // Alert
+                showMessage('You have to select which data you want to analyse first');
+                // Redirect to the manager
+                Router.navigate(Router.routes.dataManager());
+
+                return;
+            }
+
+            var dashboardView = new DashboardView({
+                groupsCollection: this.groupsCollection,
+                rawCollection: this.rawCollection
+            });
+
+            this._updateAndRenderCurrentView(dashboardView);
             this.navView.markActive(this.navView.locators.dashboardEntry);
         },
 
@@ -245,7 +262,7 @@ define([
             Router.navigate(Router.routes.dataManager());
         },
 
-        // MOVE TO ANOTHER CLASSS???
+        // Defaul groups
         _createInitialGroups: function() {
 
             var groups = [
@@ -264,7 +281,7 @@ define([
                 {
                     "id": "americas",
                     "name": "Americas",
-                    "description": "Countries of both Americas and Aaribbean",
+                    "description": "Countries of both Americas and Caribbean",
                     "countryCodes": ["BM", "CA", "GL", "PM", "US", "AG", "AI", "AN", "AW", "BB", "BL", "BS", "CU", "DM", "DO", "GD", "GP", "HT", "JM", "KN", "KY", "LC", "MF", "MQ", "MS", "PR", "TC", "TT", "VC", "VG", "VI", "BZ", "CR", "GT", "HN", "MX", "NI", "PA", "SV", "AR", "BO", "BR", "CL", "CO", "EC", "FK", "GF", "GY", "PE", "PY", "SR", "UY", "VE"]
                 },
                 {

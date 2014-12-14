@@ -1,3 +1,6 @@
+/**
+ * BackboneJS view that implements the Filter settings of the Geo view.
+ */
 define([
     'jquery',
     'underscore',
@@ -12,6 +15,10 @@ define([
             if( _.isUndefined(args.filters) )
                 throwError('No filters passed to geo filters view');
 
+            this.locators = {
+                filterChooser: '#geo-filter-chooser'
+            };
+            
             this.filters = args.filters;
 
             this.template = template;
@@ -30,14 +37,14 @@ define([
             this.$el.html(compiled);
 
             // Enable JS components
-            this.$el.find('#geo-filter-chooser').bootstrapSwitch({
+            this.$el.find(this.locators.filterChooser).bootstrapSwitch({
                 onText: 'Time',
                 offText: 'Score',
                 size: 'large'
             });
 
             // Event listeners
-            this.$el.find('#geo-filter-chooser').on('switchChange.bootstrapSwitch', _.bind(this._dataFilterChanged, this));
+            this.$el.find(this.locators.filterChooser).on('switchChange.bootstrapSwitch', _.bind(this._dataFilterChanged, this));
 
             this.$el.find('.bootstrap-switch-handle-off').css('background-color', this.colors.score);
             this.$el.find('.bootstrap-switch-handle-off').css('color', 'white');

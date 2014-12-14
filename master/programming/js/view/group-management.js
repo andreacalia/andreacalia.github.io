@@ -1,3 +1,6 @@
+/**
+ * BackboneJS view that implements the group management view. Can edit or create groups.
+ */
 define([
     'jquery',
     'underscore',

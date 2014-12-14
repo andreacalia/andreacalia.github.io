@@ -8,12 +8,14 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a id="nav-home-entry" class="navbar-brand" href="#">Home</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="nav-navbar">
 			<ul class="nav navbar-nav">
+				<li id="nav-home-entry" class="nav-entry">
+					<a href="<% print( Router.routes.home() ); %>">Home</a>
+				</li>
 				<li id="nav-data-manager-entry" class="nav-entry">
 					<a href="<% print( Router.routes.dataManager() ); %>">Management</a>
 				</li>

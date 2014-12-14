@@ -1,3 +1,6 @@
+/**
+ * BackboneJS view that implements the Filter management section of the Manager view.
+ */
 define([
     'jquery',
     'underscore',

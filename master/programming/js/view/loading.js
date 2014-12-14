@@ -1,3 +1,6 @@
+/**
+ * BackboneJS view that implements the a simple loading widget.
+ */
 define([
     'jquery',
     'underscore',

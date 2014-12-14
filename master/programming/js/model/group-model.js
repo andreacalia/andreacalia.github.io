@@ -1,3 +1,7 @@
+/**
+ * BackboneJS model that represents a group of countries.
+ * It stores all the relevant information. Also contains some duplicate (reference only) data (eg. rawData) for performance reasons.
+ */
 define([
     'jquery',
     'underscore',
@@ -22,6 +26,9 @@ define([
 
 		},
 
+        /**
+         * These data are the ones that are calculated at runtime. Can be deleted without altering the group "meaning" (eg Europe still have the right regions)
+         */
 		resetDynamicData: function() {
 
 			this.set('availableCountryCodes', []);

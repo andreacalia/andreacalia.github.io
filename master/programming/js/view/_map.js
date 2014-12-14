@@ -1,3 +1,6 @@
+/**
+ * BackboneJS view that implements the Map subview of the Geo view.
+ */
 define([
     'jquery',
     'underscore',
@@ -13,7 +16,9 @@ define([
             this.dataTable = null;
 
             this.locators = {
-                map: '#map-map-locator'
+                map: '#map-map-locator',
+                mapZoomControl: '#map-zoom-control',
+                mapZoomControlIcon: '#map-zoom-control > i'
             };
 
             this.chartOptions = {
@@ -32,7 +37,7 @@ define([
             this.$el.html(this.template);
 
             // Events
-            this.$el.find('#map-zoom-control').on('click', _.bind(this._triggerZoom, this));
+            this.$el.find(this.locators.mapZoomControl).on('click', _.bind(this._triggerZoom, this));
 
             this._drawGeoChart();
         },
@@ -62,7 +67,7 @@ define([
             evt.stopPropagation();
 
             // Switch the icon
-            this.$el.find('#map-zoom-control > i').toggleClass('fa-expand fa-compress');
+            this.$el.find(this.locators.mapZoomControlIcon).toggleClass('fa-expand fa-compress');
 
             this.trigger('toggle:zoom');
         },

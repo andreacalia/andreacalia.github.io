@@ -13,8 +13,10 @@
 	<% groups.each(function(group) { %> 
 	
 		<p class="geo-grouping-group-entry" data-group-id="<% print(group.get('id')); %>">
-			<input type="checkbox" class="geo-grouping-group-checkbox">
-			<label class="geo-grouping-group-label"><% print(group.get('name')); %></label>
+			<label class="geo-grouping-group-label">
+				<input type="checkbox" class="geo-grouping-group-checkbox" data-group-id="<% print(group.get('id')); %>">
+				<% print(group.get('name')); %>
+			</label>
 			<label class="geo-grouping-group-warning" data-toggle="tooltip" data-placement="top" title="
 				This group conflicts with: <% 
 					var str = _.reduce(group.get('groupConflicts'), function(memo, conflict) {
