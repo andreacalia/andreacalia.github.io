@@ -1,0 +1,12 @@
+<div class="project-container">
+  <p class="project-title"><%= title %></p>
+  <p class="project-url"><%= url %></p>
+  <p class="project-url"><%= description %></p>
+  <ul class="project-tags-list">
+    <%
+    tags.forEach(function(tag) {
+      print('<li class="project-tags-tag">' + tag + '</li>');
+    });
+    %>
+  </ul>
+</div>

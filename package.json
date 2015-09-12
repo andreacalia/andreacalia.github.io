@@ -1,0 +1,29 @@
+{
+  "name": "andreacalia.github.io",
+  "version": "0.0.1",
+  "description": "Andrea Calia personal Web site",
+  "main": "",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreacalia/andreacalia.github.io.git"
+  },
+  "author": "Andrea Calia",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/andreacalia/andreacalia.github.io/issues"
+  },
+  "homepage": "https://github.com/andreacalia/andreacalia.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.9.3",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.1",
+    "gulp-util": "^3.0.6"
+  }
+}
