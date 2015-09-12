@@ -1,31 +1,31 @@
 (function() {
-    
+
 function main() {
 
     Promise.all([
         Utils.getJSON('static/document/projects.json'),
-        Utils.getText('index/tpl/project.html')
+        Utils.getJSON('static/document/about.json'),
+        Utils.getText('index/tpl/project.html'),
+        Utils.getText('index/tpl/about.html')
     ])
     .then(function(results) {
 
         var projects = results[0];
-        var template = results[1];
+        var about = results[1];
+        var projectTemplate = results[2];
+        var aboutTemplate = results[3];
 
         // Compile templates
-        var compiled = _.template(template);
+        var projectTemplateCompiled = _.template(projectTemplate);
+        var aboutTemplateCompiled = _.template(aboutTemplate);
+
         // output dom
-        var resultHTML = '';
+        var projectsHTML = _.reduce(projects, function(html, data) { return html + projectTemplateCompiled(data); }, '');
+        var aboutHTML = aboutTemplateCompiled(about);
 
-        // Process each project and append html
-        projects.forEach(function(project) {
-
-            resultHTML = resultHTML + compiled(project);
-
-        });
-
-        document.getElementById('projects-container').innerHTML = resultHTML;
-
-    })
+        document.getElementById('about-container').innerHTML = aboutHTML;
+        document.getElementById('projects-container').innerHTML = projectsHTML;
+    });
 
 }
 

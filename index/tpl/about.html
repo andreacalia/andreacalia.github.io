@@ -1,0 +1,21 @@
+<div class="about-container">
+    <div class="about-header">
+        <img class="about-image" src="<%= image %>" alt="Me"/>
+        <p class="about-name"><%= name %></p>
+        <ul class="about-titles-list">
+        <%
+            titles.forEach(function(title) {
+                print('<li class="about-titles-title">' + title + '</li>');
+            });
+        %>
+        </ul>
+    </div>
+    <hr/>
+
+    <div id="about-contact-container">
+        <p class="about-contact-entry"><span class="fa fa-2x fa-linkedin"></span><a href="<%= linkedin.url %>" class="about-contact-entry-text"><%= linkedin.text %></a></p>
+        <p class="about-contact-entry"><span class="fa fa-2x fa-twitter"></span><a href="<%= twitter.url %>" class="about-contact-entry-text"><%= twitter.text %></a></p>
+        <p class="about-contact-entry"><span class="fa fa-2x fa-github-alt"></span><a href="<%= github.url %>" class="about-contact-entry-text"><%= github.text %></a></p>
+    </div>
+
+</div>

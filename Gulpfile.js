@@ -8,10 +8,10 @@ var concat = require('gulp-concat');
 
 // SASS files
 gulp.task('styles', function() {
-  return    gulp.src('./index/sass/**/*.scss')
+  return    gulp.src('./index/sass/style.scss')
             .pipe(concat('index.min.css'))
             .pipe(gulp.dest('./index/dist/'))
-            .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
+            .pipe(sass({ style: 'compressed', includePaths: ['./index/sass/']}).on('error', sass.logError))
             .pipe(gulp.dest('./index/dist/'))
             .pipe(browserSync.stream());
 });

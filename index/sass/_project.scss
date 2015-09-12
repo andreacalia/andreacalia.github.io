@@ -1,0 +1,73 @@
+.project-container {
+    background-color: white;
+
+    -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 12px 15px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 12px 15px 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 12px 15px 0;
+
+    border: 1px solid $primary-color-dark;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    min-height: 50px;
+
+    hr {
+        border: 0;
+        border-top: 1px solid $divider-color;
+        margin: 0px;
+    }
+}
+
+.project-title {
+    color: $primary-color-text;
+    font-size: 2em;
+    font-size: 300;
+    text-align: center;
+}
+
+.project-header {
+    padding: 20px;
+    background-color: $primary-color;
+}
+
+.project-url {
+    padding: 10px;
+    color: $primary-color-text;
+    font-size: small;
+    text-align: center;
+
+    a {
+        color: $primary-color-text;
+        text-decoration: none;
+    }
+}
+
+.project-description {
+    text-align: justify;
+    color: $primary-text-color;
+    padding: 10px;
+}
+
+.project-tags-list {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.project-tags-tag {
+    display: inline;
+
+    margin-right: 5px;
+    padding: 5px;
+
+    border: 1px solid $accent-color;
+    background-color: $accent-color;
+
+    color: $primary-color-text;
+
+    -moz-border-radius: 10%;
+    -webkit-border-radius: 10%;
+    border-radius: 10%;
+
+    text-align: center;
+    font-weight: 300;
+    font-size: small;
+}

@@ -1,7 +1,20 @@
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600);*/
+
+$primary-color-dark:   #388E3C;
+$primary-color:        #4CAF50;
+$primary-color-light:  #C8E6C9;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #8BC34A;
+$primary-text-color:   #212121;
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+
+@import 'about';
+@import 'project';
+
+
 body {
-  background-color: red;
-
+    font-family: 'Open Sans', sans-serif;;
+    background-color: #374046   ;
+    color: $primary-text-color;
 }
-
-.bit-25 {width:25%;}
-.bit-75 {width:75%;}
