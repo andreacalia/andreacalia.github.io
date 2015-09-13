@@ -21,24 +21,27 @@
   -webkit-border-radius: 50%;
   border-radius: 50%;
   display: block;
-  max-width: 200px;
-  height: auto;
   margin: 0px auto 10px auto;
   border: 1px solid #CCC;
   -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 5px 5px 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 5px 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.24) 0 5px 5px 0; }
+  box-shadow: rgba(0, 0, 0, 0.24) 0 5px 5px 0;
+  /* Make sure elements don't run outside containers (great for images in columns) */
+  /*.u-max-full-width {*/
+  max-width: 60%;
+  box-sizing: border-box;
+  /*}*/ }
 
 .about-name {
   text-align: center;
-  font-size: 2em;
-  font-weight: 600;
+  /*font-size: 2em;*/
+  /*font-weight: 600;*/
   margin-bottom: 40px; }
 
 .about-titles-title {
   text-align: center;
   font-style: italic;
-  font-weight: 300;
+  /*font-weight: 300;*/
   margin-bottom: 10px; }
 
 .about-contact-entry {
@@ -66,7 +69,7 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0 12px 15px 0;
   border: 1px solid #388E3C;
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   min-height: 50px; }
   .project-container hr {
     border: 0;
@@ -75,22 +78,25 @@
 
 .project-title {
   color: #FFFFFF;
-  font-size: 2em;
-  font-size: 300;
-  text-align: center; }
+  /*font-size: 2em;*/
+  /*font-size: 300;*/
+  text-align: left; }
 
 .project-header {
   padding: 20px;
   background-color: #4CAF50; }
 
-.project-url {
-  padding: 10px;
+.project-links {
+  padding: 20px 0px 20px 0px; }
+
+.project-url, .project-repository {
   color: #FFFFFF;
-  font-size: small;
-  text-align: center; }
-  .project-url a {
+  margin-bottom: 5px; }
+  .project-url a, .project-repository a {
     color: #FFFFFF;
     text-decoration: none; }
+  .project-url span, .project-repository span {
+    margin-right: 20px; }
 
 .project-description {
   text-align: justify;
@@ -102,20 +108,29 @@
   padding: 10px; }
 
 .project-tags-tag {
-  display: inline;
+  display: inline-block;
+  min-width: 50px;
   margin-right: 5px;
   padding: 5px;
   border: 1px solid #607D8B;
   background-color: #607D8B;
   color: #FFFFFF;
-  -moz-border-radius: 10%;
-  -webkit-border-radius: 10%;
-  border-radius: 10%;
+  -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 6px 20px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 6px 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 6px 20px 0;
   text-align: center;
-  font-weight: 300;
   font-size: small; }
 
 body {
-  font-family: 'Open Sans', sans-serif;
   background-color: #374046;
   color: #212121; }
+
+footer {
+  text-align: center;
+  margin-top: 100px;
+  color: #888; }
+  footer p {
+    margin-bottom: 5px; }
+  footer a {
+    color: #DDD;
+    text-decoration: none; }

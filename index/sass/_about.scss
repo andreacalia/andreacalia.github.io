@@ -28,28 +28,31 @@
 
   display: block;
 
-  max-width: 200px;
-  height: auto;
-
   margin: 0px auto 10px auto;
   border: 1px solid #CCC;
 
   -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 5px 5px 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 5px 5px 0;
   box-shadow: rgba(0, 0, 0, 0.24) 0 5px 5px 0;
+
+  /* Make sure elements don't run outside containers (great for images in columns) */
+  /*.u-max-full-width {*/
+      max-width: 60%;
+      box-sizing: border-box;
+  /*}*/
 }
 
 .about-name {
   text-align: center;
-  font-size: 2em;
-  font-weight: 600;
+  /*font-size: 2em;*/
+  /*font-weight: 600;*/
   margin-bottom: 40px;
 }
 
 .about-titles-title {
   text-align: center;
   font-style: italic;
-  font-weight: 300;
+  /*font-weight: 300;*/
   margin-bottom: 10px;
 }
 

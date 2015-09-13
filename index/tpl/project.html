@@ -1,10 +1,17 @@
 <div class="project-container flipInX animated">
     <div class="project-header">
-        <p class="project-title"><%= title %></p>
-        <p class="project-url"><a href="<%= url %>"><%= url %></a></p>
+        <h2 class="project-title"><%= title %></h2>
+        <div class="project-links">
+            <% if(typeof url !== 'undefined') { %>
+                <p class="project-url"><a href="<%= url %>"><span class="fa fa-external-link"></span><%= url %></a></p>
+            <% } %>
+            <% if(typeof repository !== 'undefined') { %>
+                <p class="project-repository"><a href="<%= repository %>"><span class="fa fa-github-alt"></span><%= repository %></a></p>
+            <% } %>
+        </div>
     </div>
   <hr/>
-  <p class="project-description"><%= description %></p>
+  <p class="project-description"><%= description.content %></p>
   <ul class="project-tags-list">
     <%
     tags.forEach(function(tag) {

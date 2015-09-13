@@ -14,7 +14,23 @@ $divider-color:        #B6B6B6;
 
 
 body {
-    font-family: 'Open Sans', sans-serif;;
     background-color: #374046   ;
     color: $primary-text-color;
+}
+
+footer {
+    text-align: center;
+
+    margin-top: 100px;
+
+    color: #888;
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    a {
+        color: #DDD;
+        text-decoration: none;
+    }
 }

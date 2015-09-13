@@ -7,7 +7,7 @@
 
     border: 1px solid $primary-color-dark;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
     min-height: 50px;
 
     hr {
@@ -19,9 +19,9 @@
 
 .project-title {
     color: $primary-color-text;
-    font-size: 2em;
-    font-size: 300;
-    text-align: center;
+    /*font-size: 2em;*/
+    /*font-size: 300;*/
+    text-align: left;
 }
 
 .project-header {
@@ -29,15 +29,20 @@
     background-color: $primary-color;
 }
 
-.project-url {
-    padding: 10px;
+.project-links {
+    padding: 20px 0px 20px 0px;
+}
+
+.project-url, .project-repository {
     color: $primary-color-text;
-    font-size: small;
-    text-align: center;
+    margin-bottom: 5px;
 
     a {
         color: $primary-color-text;
         text-decoration: none;
+    }
+    span {
+        margin-right: 20px;
     }
 }
 
@@ -53,7 +58,9 @@
 }
 
 .project-tags-tag {
-    display: inline;
+    display: inline-block;
+
+    min-width: 50px;
 
     margin-right: 5px;
     padding: 5px;
@@ -63,11 +70,10 @@
 
     color: $primary-color-text;
 
-    -moz-border-radius: 10%;
-    -webkit-border-radius: 10%;
-    border-radius: 10%;
+    -moz-box-shadow: rgba(0, 0, 0, 0.24) 0 6px 20px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0 6px 20px 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 6px 20px 0;
 
     text-align: center;
-    font-weight: 300;
     font-size: small;
 }
