@@ -33,7 +33,7 @@
     padding: 20px 0px 20px 0px;
 }
 
-.project-url, .project-repository {
+.project-url, .project-repository, .project-youtube {
     color: $primary-color-text;
     margin-bottom: 5px;
 
@@ -47,9 +47,14 @@
 }
 
 .project-description {
-    text-align: justify;
-    color: $primary-text-color;
+
     padding: 10px;
+    
+    p {
+        text-align: justify;
+        color: $primary-text-color;
+    }
+
 }
 
 .project-tags-list {

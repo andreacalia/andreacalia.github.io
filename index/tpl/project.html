@@ -1,4 +1,4 @@
-<div class="project-container flipInX animated">
+<div class="project-container zoomIn animated" id="<%= id %>">
     <div class="project-header">
         <h2 class="project-title"><%= title %></h2>
         <div class="project-links">
@@ -8,10 +8,13 @@
             <% if(typeof repository !== 'undefined') { %>
                 <p class="project-repository"><a href="<%= repository %>"><span class="fa fa-github-alt"></span><%= repository %></a></p>
             <% } %>
+            <% if(typeof youtube !== 'undefined') { %>
+                <p class="project-youtube"><a href="<%= youtube %>"><span class="fa fa-youtube"></span><%= youtube %></a></p>
+            <% } %>
         </div>
     </div>
   <hr/>
-  <p class="project-description"><%= description.content %></p>
+  <div class="project-description"><%= description.content %></div>
   <ul class="project-tags-list">
     <%
     tags.forEach(function(tag) {

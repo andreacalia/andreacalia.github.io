@@ -9,9 +9,9 @@ var concat = require('gulp-concat');
 // SASS files
 gulp.task('styles', function() {
   return    gulp.src('./index/sass/style.scss')
-            .pipe(concat('index.min.css'))
-            .pipe(gulp.dest('./index/dist/'))
+            //.pipe(gulp.dest('./index/dist/'))
             .pipe(sass({ style: 'compressed', includePaths: ['./index/sass/']}).on('error', sass.logError))
+            .pipe(rename('index.min.css'))
             .pipe(gulp.dest('./index/dist/'))
             .pipe(browserSync.stream());
 });
@@ -41,6 +41,8 @@ gulp.task('serve', function() {
 
     gulp.watch('./index/sass/**/*.scss', ['styles']);
     gulp.watch("./*.html").on('change', browserSync.reload);
+    gulp.watch("./index/tpl/*.html").on('change', browserSync.reload);
+    gulp.watch("./static/document/*.json").on('change', browserSync.reload);
     gulp.watch("./index/js/**/*.js", ['js-watch']);
 });
 

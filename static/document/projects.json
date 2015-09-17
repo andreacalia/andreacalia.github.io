@@ -1,89 +1,41 @@
 [
   {
-    "title": "Project 1",
-    "url": "asd.lol.com",
-    "repository": "asd.lol.com",
+    "title": "Trip Planner",
+    "id": "trip-planner",
+    "youtube": "http://youtu.be/HdGypS9rvb8",
+    "repository": "https://github.com/andreacalia/uji-final-year-project",
     "description": {
-        "content": "Veniam veniam sit cupidatat mollit dolor proident. Ea est reprehenderit reprehenderit ullamco. Sunt dolore sint velit incididunt dolore reprehenderit ad sit. Do esse voluptate sit in consequat sint Lorem consectetur laboris elit ipsum. Fugiat excepteur dolor veniam sit velit aliquip laboris consectetur dolor incididunt sint proident.",
+        "content": "<p>Trip Planner is the result application of my bachelor thesis. It connects the Renfe Web Service and the Bicicas Web Service to provide basic trip organization.</p><p>The main objective is to locate the user and guide her to the main train station of Valencia. The user is supposed to be in the Valencian region. To achieve this goal, it makes use ofRenfe is the state-owned train company of Spain. Renfe Web Service scans the official Web Site and gathers information about the trains of the regional trains of Valencia. <p>The official Web Site provides a form for filtering the trains. This Web Service provides an abstraction of the query using classical REST URL style. Behind the scenes, it requests the Renfe's Web Site and search in it the results that matches the query.</p><p>There is no database involved in the operations, all the data are processed in real time.</p><p>All the credits for the data go to the owners of the service <a href='http://www.renfe.com/' alt='Renfe official Web Site'>Renfe</a>.</p>",
         "type": "html"
     },
     "tags": [
-      "js", "tag1", "tag2"
+      "Java", "JAX-RS (Jersey)", "Maven", "Javascript", "HTML/CSS", "Leaflet"
     ],
     "image": ""
   },
   {
-    "title": "Project 2",
-    "url": "asd.lol.com",
+    "title": "Renfe Web Service",
+    "id": "renfe-ws",
+    "repository": "https://github.com/andreacalia/uji-final-year-project",
     "description": {
-        "content": "Veniam veniam sit cupidatat mollit dolor proident. Ea est reprehenderit reprehenderit ullamco. Sunt dolore sint velit incididunt dolore reprehenderit ad sit. Do esse voluptate sit in consequat sint Lorem consectetur laboris elit ipsum. Fugiat excepteur dolor veniam sit velit aliquip laboris consectetur dolor incididunt sint proident.",
+        "content": "<p>Renfe is the state-owned train company of Spain. Renfe Web Service scans the official Web Site and gathers information about the trains of the regional trains of Valencia. <p>The official Web Site provides a form for filtering the trains. This Web Service provides an abstraction of the query using classical REST URL style. Behind the scenes, it requests the Renfe's Web Site and search in it the results that matches the query.</p><p>There is no database involved in the operations, all the data are processed in real time.</p><p>All the credits for the data go to the owners of the service <a href='http://www.renfe.com/' alt='Renfe official Web Site'>Renfe</a>.</p>",
         "type": "html"
     },
     "tags": [
-      "js", "tag1", "tag2",
-      "js", "tag1", "tag2",
-      "js", "tag1", "tag2",
-      "js", "tag1", "tag2"
+      "Java", "JAX-RS (Jersey)", "Maven"
     ],
     "image": ""
   },
   {
-    "title": "Project 3",
-    "url": "asd.lol.com",
+    "title": "Bicicas Web Service",
+    "id": "bicicas-ws",
+    "repository": "https://github.com/andreacalia/uji-final-year-project",
     "description": {
-        "content": "Veniam veniam sit cupidatat mollit dolor proident. Ea est reprehenderit reprehenderit ullamco. Sunt dolore sint velit incididunt dolore reprehenderit ad sit. Do esse voluptate sit in consequat sint Lorem consectetur laboris elit ipsum. Fugiat excepteur dolor veniam sit velit aliquip laboris consectetur dolor incididunt sint proident.",
+        "content": "<p>Bicicas is a bike sharing service active in the city of Castellón de la Plana (Spain). This Web Service scans the official Web Site and gathers information about the bike's stations. The information is then stored in a MongoDB database for further analysis. Since the Web Site doesn't provide any API or push notification, this project uses polling and scraping strategy for data recovery.</p><p>All the credits for the data go to the owners of the service <a href='http://www.bicicas.es/' alt='Bicicas official Web Site'>Bicicas</a>.</p><p>The application provides the collected data through a REST API.</p><em>Note: this project is discontinued due to the work in progress state of the Bicicas Web Site.</em>",
         "type": "html"
     },
     "tags": [
-      "js", "tag1", "tag2"
-    ],
-    "image": ""
-  },
-  {
-    "title": "Project 2",
-    "url": "asd.lol.com",
-    "description": {
-        "content": "Veniam veniam sit cupidatat mollit dolor proident. Ea est reprehenderit reprehenderit ullamco. Sunt dolore sint velit incididunt dolore reprehenderit ad sit. Do esse voluptate sit in consequat sint Lorem consectetur laboris elit ipsum. Fugiat excepteur dolor veniam sit velit aliquip laboris consectetur dolor incididunt sint proident.",
-        "type": "html"
-    },
-    "tags": [
-      "js", "tag1", "tag2"
-    ],
-    "image": ""
-  },
-  {
-    "title": "Project 3",
-    "url": "asd.lol.com",
-    "description": {
-        "content": "Veniam veniam sit cupidatat mollit dolor proident. Ea est reprehenderit reprehenderit ullamco. Sunt dolore sint velit incididunt dolore reprehenderit ad sit. Do esse voluptate sit in consequat sint Lorem consectetur laboris elit ipsum. Fugiat excepteur dolor veniam sit velit aliquip laboris consectetur dolor incididunt sint proident.",
-        "type": "html"
-    },
-    "tags": [
-      "js", "tag1", "tag2"
-    ],
-    "image": ""
-  },
-  {
-    "title": "Project 2",
-    "url": "<URL>",
-    "description": {
-        "content": "Veniam veniam sit cupidatat mollit dolor proident. Ea est reprehenderit reprehenderit ullamco. Sunt dolore sint velit incididunt dolore reprehenderit ad sit. Do esse voluptate sit in consequat sint Lorem consectetur laboris elit ipsum. Fugiat excepteur dolor veniam sit velit aliquip laboris consectetur dolor incididunt sint proident.",
-        "type": "html"
-    },
-    "tags": [
-      "js", "tag1", "tag2"
-    ],
-    "image": ""
-  },
-  {
-    "title": "Project 3",
-    "url": "<URL>",
-    "description": {
-        "content": "Veniam veniam sit cupidatat mollit dolor proident. Ea est reprehenderit reprehenderit ullamco. Sunt dolore sint velit incididunt dolore reprehenderit ad sit. Do esse voluptate sit in consequat sint Lorem consectetur laboris elit ipsum. Fugiat excepteur dolor veniam sit velit aliquip laboris consectetur dolor incididunt sint proident.",
-        "type": "html"
-    },
-    "tags": [
-      "js", "tag1", "tag2"
+      "Java", "JAX-RS (Jersey)", "MongoDB", "Maven"
     ],
     "image": ""
   }
