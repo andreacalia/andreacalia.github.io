@@ -49,10 +49,14 @@
 .project-description {
 
     padding: 10px;
-    
+
     p {
         text-align: justify;
         color: $primary-text-color;
+    }
+
+    .warning {
+        color: #e65100;
     }
 
 }

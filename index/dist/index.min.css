@@ -104,6 +104,8 @@
   .project-description p {
     text-align: justify;
     color: #212121; }
+  .project-description .warning {
+    color: #e65100; }
 
 .project-tags-list {
   list-style-type: none;

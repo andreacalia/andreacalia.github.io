@@ -14,6 +14,20 @@
     "image": ""
   },
   {
+    "title": "Sensors",
+    "id": "sensors",
+    "repository": "https://github.com/andreacalia/Sensors",
+    "url": "http://andreacalia.github.io/Sensors/",
+    "description": {
+        "content": "<p>This application shows the values of Light, Temperature and Humidity sensors located on the buildings of the University Jaume I for a given day</p><p>The colors indicate the intensity of the sensor values divided in five classes.</p><p>This project is a group work for the <a href=\"http://mastergeotech.info/\"> Master of Science in Geospatial Technologies</a> and was used as a prototype application for an ongoing research project</p><p class=\"warning\">Note: this project will no longer work due to the removal of the Web Service from which the data are fetched.</p>",
+        "type": "html"
+    },
+    "tags": [
+      "Javascript", "HTML/CSS", "Dojo", "ArcGIS Javascript"
+    ],
+    "image": ""
+  },
+  {
     "title": "Renfe Web Service",
     "id": "renfe-ws",
     "repository": "https://github.com/andreacalia/uji-final-year-project",
@@ -31,7 +45,7 @@
     "id": "bicicas-ws",
     "repository": "https://github.com/andreacalia/uji-final-year-project",
     "description": {
-        "content": "<p>Bicicas is a bike sharing service active in the city of Castellón de la Plana (Spain). This Web Service scans the official Web Site and gathers information about the bike's stations. The information is then stored in a MongoDB database for further analysis. Since the Web Site doesn't provide any API or push notification, this project uses polling and scraping strategy for data recovery.</p><p>All the credits for the data go to the owners of the service <a href='http://www.bicicas.es/' alt='Bicicas official Web Site'>Bicicas</a>.</p><p>The application provides the collected data through a REST API.</p><em>Note: this project is discontinued due to the work in progress state of the Bicicas Web Site.</em>",
+        "content": "<p>Bicicas is a bike sharing service active in the city of Castellón de la Plana (Spain). This Web Service scans the official Web Site and gathers information about the bike's stations. The information is then stored in a MongoDB database for further analysis. Since the Web Site doesn't provide any API or push notification, this project uses polling and scraping strategy for data recovery.</p><p>All the credits for the data go to the owners of the service <a href='http://www.bicicas.es/' alt='Bicicas official Web Site'>Bicicas</a>.</p><p>The application provides the collected data through a REST API.</p><p class=\"warning\">Note: this project is discontinued due to the work in progress state of the Bicicas Web Site.</p>",
         "type": "html"
     },
     "tags": [
