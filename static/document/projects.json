@@ -14,6 +14,20 @@
     "image": ""
   },
   {
+    "title": "Master's programming course project",
+    "id": "siw001",
+    "repository": "https://github.com/andreacalia/siw-001-programming",
+    "url": "http://andreacalia.github.io/master/programming/",
+    "description": {
+        "content": "<p><a href=\"http://emotional-apps.com/\">MEIT</a> is a mobile application that allows users to assess their emotional intelligence. The application is grounded in state of the art knowledge in psychology to grade the users emotional intelligence on a scale of 1–121 at hand of some simple visual tests.</p><p>The goal of the assignment is to implement a 1-page Web Application that visualizes the aggregate demographic data that is obtained from the MEIT application. In particular, the average score and time to perform the test needs to be visualized on a map, grouped per country, continent, or custom grouping of countries (i.e., the user needs to be able to group countries). Furthermore, it needs to be possible to set certain parameters: gender, age range, date range and tests performed, whereby results should be(dynamically) updateable.</p><p>This project is the final project of the programming course of the <a href=\"http://mastergeotech.info/\"> Master of Science in Geospatial Technologies</a>.</p>",
+        "type": "html"
+    },
+    "tags": [
+      "Javascript", "HTML/CSS", "UnderscoreJS", "BackboneJS", "Bower", "Grunt", "SASS"
+    ],
+    "image": ""
+  },
+  {
     "title": "Sensors",
     "id": "sensors",
     "repository": "https://github.com/andreacalia/Sensors",
