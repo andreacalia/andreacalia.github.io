@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+
+html, body, #container {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans";
+  background-color: #FBFBFB;
+  color: #333333;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+#left-panel {
+  width: 20%;
+  height: 100%;
+}
+
+#header{
+  font-family: "Open Sans";
+  font-weight: 300;
+  width: 100%;
+  padding: .5em;
+}
+
+#header i {
+  color: #293aa7;
+  font-size: 8.5em;
+  position: fixed;
+  top: -0px;
+  right: -10px;
+  opacity: .25;
+  -webkit-animation: 4s ease-in 1s infinite alternate pendulum;
+  -moz-animation: 4s ease-in 1s infinite alternate pendulum;
+  -o-animation: 4s ease-in 1s infinite alternate pendulum;
+  animation: 4s ease-in 1s infinite alternate pendulum;
+}
+
+.smile:before {
+  content: "\1F603"
+}
+
+#places-list li:hover {
+  cursor: pointer;
+}
+
+@keyframes pendulum {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+}

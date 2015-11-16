@@ -20,8 +20,8 @@ gulp.task('styles', function() {
 gulp.task('js', function () {
     return  gulp.src('./index/js/**/*.js')
             .pipe(concat('index.min.js'))
-            .pipe(gulp.dest('./index/dist/'))
-            .pipe(uglify()).on('error', gutil.log)
+            //.pipe(gulp.dest('./index/dist/'))
+            //.pipe(uglify({outSourceMap: true})).on('error', gutil.log)
             .pipe(gulp.dest('./index/dist/'))
             .pipe(browserSync.stream());
 });

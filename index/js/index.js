@@ -14,7 +14,6 @@ function main() {
         var about = results[1];
         var projectTemplate = results[2];
         var aboutTemplate = results[3];
-
         // Compile templates
         var projectTemplateCompiled = _.template(projectTemplate);
         var aboutTemplateCompiled = _.template(aboutTemplate);
