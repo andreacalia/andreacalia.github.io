@@ -8,7 +8,7 @@ require([
   FeatureLayer,
   Query
 ) {
-  
+
   arcgisUtils.createMap("562b80fbbdd745d4a59ff1a86092d5fb", "map").then(function(response) {
 
     // The map we are using
@@ -27,6 +27,7 @@ require([
 
       // This is the DOM element containing the list of the places
       var list = document.getElementById("places-list");
+      list.innerHTML = '';
 
       // For each feature of the layer, we need to add a list element
       featureSet.features.forEach(function(feature) {
@@ -34,14 +35,13 @@ require([
         // The name of the feature, e.g. Lisbon
         var name = feature.attributes.PLACENAME;
 
-        // Create an HTML element
+        // Create an HTML list element
         var listElement = document.createElement("li");
         listElement.innerHTML = name;
         listElement.setAttribute("data-name", name);
 
         // Add the click event, when the user clicks, the popup should appear
         listElement.addEventListener("click", function(event) {
-
 
           var clickedPlace = event.target.getAttribute("data-name");
 

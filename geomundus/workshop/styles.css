@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 
 html, body, #container {
   height: 100%;
@@ -14,18 +15,28 @@ html, body, #container {
   height: 100%;
   width: 100%;
   padding: 0;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 #left-panel {
   width: 20%;
-  height: 100%;
 }
 
-#header{
-  font-family: "Open Sans";
+#header {
+  font-family: 'Indie Flower', cursive;
   font-weight: 300;
   width: 100%;
   padding: .5em;
+}
+
+.smile:before {
+  content: "\1F60A"
+}
+
+#places-list li:hover {
+  cursor: pointer;
 }
 
 #header i {
@@ -39,14 +50,6 @@ html, body, #container {
   -moz-animation: 4s ease-in 1s infinite alternate pendulum;
   -o-animation: 4s ease-in 1s infinite alternate pendulum;
   animation: 4s ease-in 1s infinite alternate pendulum;
-}
-
-.smile:before {
-  content: "\1F603"
-}
-
-#places-list li:hover {
-  cursor: pointer;
 }
 
 @keyframes pendulum {
