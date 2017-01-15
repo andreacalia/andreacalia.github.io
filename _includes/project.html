@@ -1,0 +1,22 @@
+<div class="project-container zoomIn animated pure-g" id="{{ project.project.id }}">
+    <div class="project-header pure-u-1 pure-u-sm-2-5 pure-u-md-1-4">
+        <h2 class="project-title">{{ project.title }}</h2>
+        <div class="project-links">
+            {% if project.url %}
+            <p class="project-url"><a href="{{ project.url }}"><span class="fa fa-external-link"></span>Link</a></p>
+            {% endif %}
+            {% if project.repository %}
+            <p class="project-repository"><a href="{{ project.repository }}"><span class="fa fa-github-alt"></span>Source</a></p>
+            {% endif %}
+            {% if project.youtube %}
+            <p class="project-youtube"><a href="{{ project.youtube }}"><span class="fa fa-youtube"></span>Video</a></p>
+            {% endif %}
+        </div>
+        <ul class="project-tags-list">
+            {% for tag in project.tags %}
+            <li class="project-tags-tag">{{ tag }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="project-description pure-u-1 pure-u-sm-3-5 pure-u-md-3-4">{{ project.description.content }}</div>
+</div>

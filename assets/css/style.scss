@@ -1,0 +1,40 @@
+---
+---
+@import 'variables';
+@import 'pure-extended';
+@import 'mixins';
+@import 'about';
+@import 'project';
+@import 'section';
+
+.pure-g [class *= 'pure-u'],
+button,
+html,
+input,
+select,
+textarea {
+  font-family: 'Raleway', serif;
+}
+
+body {
+  background-color: $body-background-color;
+  color: $primary-text-color;
+  margin: auto;
+  max-width: 1000px;
+  padding: .5em;
+}
+
+footer {
+  color: $footer-text-color;
+  margin-top: 100px;
+  text-align: center;
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  a {
+    color: $footer-link-color;
+    text-decoration: none;
+  }
+}
