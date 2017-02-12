@@ -1,0 +1,109 @@
+- title: Trip Planner
+  id: trip-planner
+  youtube: http://youtu.be/HdGypS9rvb8
+  repository: https://github.com/andreacalia/uji-final-year-project
+  description: |
+    Trip Planner is the result application of my [bachelor thesis](/assets/document/bachelor-thesis.pdf). It connects the Renfe Web Service and the Bicicas Web Service to provide basic trip organization.
+
+    The main objective is to locate the user and guide her to the main train station of Valencia. The user is supposed to be in the Valencian region.
+    To achieve this goal, it makes use of Renfe is the state-owned train company of Spain.
+    Renfe Web Service scans the official Web Site and gathers information about the trains of the regional trains of Valencia.
+
+    The official Web Site provides a form for filtering the trains. This Web Service provides an abstraction of the query using classical REST URL style.
+    Behind the scenes, it requests the Renfe's Web Site and search in it the results that matches the query.
+
+    There is no database involved in the operations, all the data are processed in real time.
+
+    All the credits for the data go to the owners of the service [Renfe](http://www.renfe.com/).
+  tags:
+    - Java
+    - JAX-RS (Jersey)
+    - Maven
+    - Javascript
+    - HTML/CSS
+    - Leaflet
+  image:
+
+- title: Master's programming course project
+  id: siw001
+  repository: https://github.com/andreacalia/siw-001-programming
+  url: http://andreacalia.github.io/master/programming/
+  description: |
+    [MEIT](http://emotional-apps.com/) is a mobile application that allows users to assess their emotional intelligence.
+    The application is grounded in state of the art knowledge in psychology to grade the users emotional intelligence on a scale of 1–121 at hand of some simple visual tests.
+
+    The goal of the assignment is to implement a 1-page Web Application that visualizes the aggregate demographic data that is obtained from the MEIT application.
+    In particular, the average score and time to perform the test needs to be visualized on a map, grouped per country, continent, or custom grouping of countries (i.e., the user needs to be able to group countries).
+
+    Furthermore, it needs to be possible to set certain parameters: gender, age range, date range and tests performed, whereby results should be (dynamically) updateable.
+
+    This project is the final project of the programming course of the [Master of Science in Geospatial Technologies](http://mastergeotech.info/).
+  tags:
+    - Javascript
+    - HTML/CSS
+    - UnderscoreJS
+    - BackboneJS
+    - Bower
+    - Grunt
+    - SASS
+  image:
+
+- title: Sensors
+  id: sensors
+  repository: https://github.com/andreacalia/Sensors
+  url: http://andreacalia.github.io/Sensors/
+  description: |
+    This application shows the values of Light, Temperature and Humidity sensors located on the buildings of the University Jaume I for a given day.
+
+    The colors indicate the intensity of the sensor values divided in five classes.
+
+    This project is a group work for the [Master of Science in Geospatial Technologies](http://mastergeotech.info/) and was used as a prototype application for an ongoing research project.
+
+    <p class="warning">Note: this project will no longer work due to the removal of the Web Service from which the data are fetched.</p>
+  tags:
+    - Javascript
+    - HTML/CSS
+    - Dojo
+    - ArcGIS Javascript
+  image:
+
+- title: Renfe Web Service
+  id: renfe-ws
+  repository: https://github.com/andreacalia/uji-final-year-project
+  description: |
+    Renfe is the state-owned train company of Spain.
+    Renfe Web Service scans the official Web Site and gathers information about the trains of the regional trains of Valencia.
+
+    The official Web Site provides a form for filtering the trains.
+    This Web Service provides an abstraction of the query using classical REST URL style.
+    Behind the scenes, it requests the Renfe's Web Site and search in it the results that matches the query.
+
+    There is no database involved in the operations, all the data are processed in real time.
+
+    All the credits for the data go to the owners of the service [Renfe](http://www.renfe.com/).
+  tags:
+    - Java
+    - JAX-RS (Jersey)
+    - Maven
+  image:
+
+- title: Bicicas Web Service
+  id: bicicas-ws
+  repository: https://github.com/andreacalia/uji-final-year-project
+  description: |
+    Bicicas is a bike sharing service active in the city of Castellón de la Plana (Spain).
+    This Web Service scans the official Web Site and gathers information about the bike's stations.
+    The information is then stored in a MongoDB database for further analysis.
+    Since the Web Site doesn't provide any API or push notification, this project uses polling and scraping strategy for data recovery.
+
+    All the credits for the data go to the owners of the service [Bicicas](http://www.bicicas.es/).
+
+    The application provides the collected data through a REST API.
+
+    <p class="warning">Note: this project is discontinued due to the work in progress state of the Bicicas Web Site.</p>
+  tags:
+    - Java
+    - JAX-RS (Jersey)
+    - MongoDB
+    - Maven
+  image:

@@ -1,0 +1,54 @@
+.about-container {
+  @include ui-box;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+}
+
+.about-image {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  box-shadow: $ui-shadow-color 0 5px 5px 0;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto 10px;
+  max-width: 45%;
+}
+
+.about-name {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.about-titles-title {
+  font-style: italic;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.about-contact-entry {
+  margin-bottom: 20px;
+  vertical-align: middle;
+
+  span {
+    color: $secondary-text-color;
+    min-width: 30px;
+  }
+}
+
+.about-contact-entry-text {
+  color: #2c3e50;
+  margin-left: 20px;
+}
+
+.about-header {
+  background-color: $primary-color;
+  color: $primary-color-text;
+  padding: 10px;
+}
+
+.about-contact-container {
+  padding: 10px;
+}

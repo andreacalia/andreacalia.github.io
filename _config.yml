@@ -1,0 +1,13 @@
+title: "/home/andreacalia"
+description: This is the personal site of Andrea Calia.
+baseurl: ""
+url: ""
+
+markdown: kramdown
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor

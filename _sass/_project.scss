@@ -1,0 +1,67 @@
+.project-container {
+  @include ui-box;
+}
+
+.project-title {
+  color: $primary-color-text;
+  margin: 0;
+  text-align: left;
+}
+
+.project-header {
+  background-color: $primary-color;
+  padding: 20px;
+}
+
+.project-links {
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.project-repository,
+.project-url,
+.project-youtube {
+  color: $primary-color-text;
+  margin-bottom: 5px;
+
+  a {
+    color: $primary-color-text;
+    text-decoration: none;
+  }
+
+  span {
+    margin-right: 10px;
+  }
+}
+
+.project-description {
+  padding: 10px;
+
+  p {
+    color: $primary-text-color;
+    text-align: justify;
+  }
+
+  .warning {
+    color: $ui-warning-text-color;
+  }
+}
+
+.project-tags-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-tags-tag {
+  background-color: $transparent;
+  border: 1px solid $accent-color;
+  box-shadow: $ui-shadow-color 0 6px 20px 0;
+  color: $primary-color-text;
+  display: inline-block;
+  font-size: small;
+  margin: 10px 10px 0 0;
+  min-width: 50px;
+  padding: 5px;
+  text-align: center;
+}

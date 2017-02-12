@@ -1,0 +1,39 @@
+<div class="about-container">
+    <div class="about-header">
+        <img class="about-image" src="{{ site.data.about.image }}" alt="Me" />
+        <h1 class="about-name">{{ site.data.about.name }}</h1>
+        <ul class="about-titles-list">
+          {% for title in site.data.about.titles %}
+            <li class="about-titles-title">{{ title }}</li>
+          {% endfor %}
+        </ul>
+    </div>
+    <hr/>
+    <div class="about-contact-container">
+        <p class="about-contact-entry"><span class="fa fa-2x fa-linkedin"></span>
+            <a href="{{ site.data.about.linkedin.url }}" class="about-contact-entry-text">
+                {{ site.data.about.linkedin.text }}
+            </a>
+        </p>
+        <p class="about-contact-entry"><span class="fa fa-2x fa-twitter"></span>
+            <a href="{{ site.data.about.twitter.url }}" class="about-contact-entry-text">
+                {{ site.data.about.twitter.text }}
+            </a>
+        </p>
+        <p class="about-contact-entry"><span class="fa fa-2x fa-github-alt"></span>
+            <a href="{{ site.data.about.github.url }}" class="about-contact-entry-text">
+                {{ site.data.about.github.text }}
+            </a>
+        </p>
+        <p class="about-contact-entry"><span class="fa fa-2x fa-google-plus"></span>
+            <a href="{{ site.data.about.googleplus.url }}" class="about-contact-entry-text">
+                {{ site.data.about.googleplus.text }}
+            </a>
+        </p>
+        <p class="about-contact-entry">
+            <span class="fa fa-2x fa-envelope"></span>
+            <a class="about-contact-entry-text" href="http://www.google.com/recaptcha/mailhide/d?k=01tX9NNX2SuJ3C_jUM2_-Mcw==&amp;c=ioObGtstXrKGA4v6n-7lZVYz1IYKKgZQrOL-zru-kzM=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501tX9NNX2SuJ3C_jUM2_-Mcw\75\75\46c\75ioObGtstXrKGA4v6n-7lZVYz1IYKKgZQrOL-zru-kzM\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
+                title="Reveal this e-mail address">a...@gmail.com</a>
+        </p>
+    </div>
+</div>
